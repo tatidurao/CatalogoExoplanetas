@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mundo dos Planetas</title>
+<title>Exoplanetas</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -90,7 +90,7 @@
 <header class="navbar navbar-dark bg-dark p-3 shadow-lg" style="background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1" style="font-family: 'Orbitron', sans-serif; font-size: 1.8rem;">
-      🌌 Mundo dos Planetas
+      🌌 Exoplanetas - Mundos Peculiares
     </span>
   </div>
 </header>
@@ -143,7 +143,7 @@ planetas.forEach(planet => {
             <div class="planet-data">Massa: ${planet.planet_mass}</div>
             <div class="planet-data">Raio: ${planet.planet_radius}</div>
             <div class="planet-data">Tipo: ${planet.planet_type}</div>
-            <div class="planet-data">Especificações: ${(planet.specifications || []).join(', ')}</div>
+            <div class="planet-data">Especificações Hábitaveis: ${(planet.specifications || []).join(', ')}</div>
         `;
         modal.style.display = 'flex';
     }
@@ -153,6 +153,7 @@ planetas.forEach(planet => {
 closeModal.onclick = () => modal.style.display = 'none';
 window.onclick = e => { if (e.target == modal) modal.style.display = 'none'; }
 </script>
-<footer>Projeto desenvolvido por [Nome do Aluno]</footer>
+<footer>Desenvolvido por Tátila Durão | 2025</footer>
 </body>
 </html>
+

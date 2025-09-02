@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Exoplanetas</title>
+<title>Mundo dos Planetas</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -90,7 +90,7 @@
 <header class="navbar navbar-dark bg-dark p-3 shadow-lg" style="background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1" style="font-family: 'Orbitron', sans-serif; font-size: 1.8rem;">
-      🌌 Exoplanet Catalog
+      🌌 Mundo dos Planetas
     </span>
   </div>
 </header>
@@ -110,10 +110,10 @@
 <script>
 function getImageForType(type) {
     switch (type) {
-        case "Gas Giant": return "assets/Gas_Giant.png";
-        case "Terrestrial": return "assets/Terrestrial.png";
-        case "Super Earth": return "assets/Super_Earth.png";
-        case "Neptune-like": return "assets/Neptune-like.png";
+        case "Gasoso": return "assets/Gas_Giant.png";
+        case "Terrestre": return "assets/Terrestrial.png";
+        case "Super-Terra": return "assets/Super_Earth.png";
+        case "Semelhante a Netuno": return "assets/Neptune-like.png";
         default: return "assets/Gas_Giant.png";
     }
 }
@@ -135,15 +135,14 @@ planetas.forEach(planet => {
         detailsDiv.innerHTML = `
             <div class="planet-name">${planet.name}</div>
             <img src="${getImageForType(planet.planet_type)}" alt="${planet.name}" style="width:200px;display:block;margin:auto;">
-            <div class="planet-data">Distância da Terra(Anos Luz): ${planet.distance_from_earth}</div>
-            <div class="planet-data">Distância de sua estrela: ${planet.distance_from_their_sun}</div>
+            <div class="planet-data">Distância da Terra: ${planet.distance_ly}  Anos luz</div>
+            <div class="planet-data">Distância de sua estrela: ${planet.distance_from_their_sun} AU</div>
             <div class="planet-data">Gravidade: ${planet.gravity}</div>
             <div class="planet-data">Período Orbital: ${planet.orbital_period}</div>
             <div class="planet-data">Velocidade Orbital: ${planet.orbital_speed}</div>
             <div class="planet-data">Massa: ${planet.planet_mass}</div>
             <div class="planet-data">Raio: ${planet.planet_radius}</div>
             <div class="planet-data">Tipo: ${planet.planet_type}</div>
-            <div class="planet-data">Especificações Hábitaveis: ${(planet.specifications || []).join(', ')}</div>
         `;
         modal.style.display = 'flex';
     }
@@ -153,9 +152,6 @@ planetas.forEach(planet => {
 closeModal.onclick = () => modal.style.display = 'none';
 window.onclick = e => { if (e.target == modal) modal.style.display = 'none'; }
 </script>
-<footer>Desenvolvido por Tátila Durão | 2025</footer>
+<footer>Projeto desenvolvido por Tátila Durao</footer>
 </body>
 </html>
-
-
-
